@@ -1,0 +1,22 @@
+//Font
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    @if ($asset-pipeline == true) {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype');
+    }
+    @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+    }
+  }
+}
+@include font-face("Montserrat", "../../fonts/Montserrat-Regular", 300);
+@include font-face("Montserrat", "../../fonts/Montserrat-Medium", 400);
+@include font-face("Montserrat", "../../fonts/Montserrat-SemiBold", 500);
+@include font-face("Montserrat", "../../fonts/Montserrat-Bold", 600);
+@include font-face("Montserrat", "../../fonts/Montserrat-ExtraBold", 700);

@@ -1,0 +1,32 @@
+@import '../helpers/helpers';
+
+body,
+html {
+  height: 100%;
+}
+
+.container {
+  @include container;
+}
+
+.row {
+  @include row;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  flex: 1;
+}
+
+@include m-min($lg) {
+  .content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+

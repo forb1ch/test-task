@@ -1,0 +1,15 @@
+@import '../helpers/helpers';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.page-title {
+  text-align: center;
+}

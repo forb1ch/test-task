@@ -1,0 +1,92 @@
+
+
+// Media queries.
+@mixin m-max($bp) {
+  $bp: $bp - 1 + px;
+
+  @media screen and (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin m-min($bp) {
+  $bp: $bp + px;
+
+  @media screen and (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin m-min-and-max($bpMin, $bpMax) {
+  $bpMin: $bpMin + px;
+  $bpMax: $bpMax - 1 + px;
+
+  @media screen and (min-width: $bpMin) and (max-width: $bpMax) {
+    @content;
+  }
+}
+
+// Flex.
+@mixin flex-def {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@mixin flex-row-rev {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-col-rev {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@mixin flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+// Layout
+@mixin container {
+  @include mCenter;
+  padding: 0 $p15;
+  width: 100%;
+
+  @include m-min($sm) {
+    max-width: $smC;
+  }
+
+  @include m-min($md) {
+    max-width: $mdC;
+  }
+
+  @include m-min($lg) {
+    max-width: $lgC;
+  }
+}
+
+@mixin row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@mixin mCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

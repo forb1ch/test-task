@@ -1,0 +1,13 @@
+{
+    "name": "test-task",
+    "authors": [
+        {
+            "name": "Illia Ostrovskiy",
+            "email": "illya.o@drupfan.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0",
+        "twig/extensions": "^1.5"
+    }
+}
